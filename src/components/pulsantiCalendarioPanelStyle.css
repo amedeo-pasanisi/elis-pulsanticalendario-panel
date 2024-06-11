@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calendarioButton {
+  text-wrap: nowrap;
+  width: 200px;
+  min-width: min-content;
+  height: min-content;
+  margin: 20px 10px;
+  padding: 15px;
+  font-family: Roboto;
+  font-size: 17px;
+  background-color: #0C419A;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  transition: all 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+.calendarioButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  transform: translateY(-2px);
+}
+
+.calendarioButton:active {
+  background-color: #1058d1;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.calendarioButton:focus  {
+  background-color: #1058d1;
+  box-shadow: none;
+  transform: none;
+}
