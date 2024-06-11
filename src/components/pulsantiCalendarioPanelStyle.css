@@ -36,7 +36,7 @@
   transform: translateY(0);
 }
 
-.calendarioButton:focus  {
+.calendarioButton.clicked {
   background-color: #1058d1;
   box-shadow: none;
   transform: none;
