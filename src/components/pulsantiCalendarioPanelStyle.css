@@ -5,8 +5,8 @@
 }
 
 .calendarioButton {
+  flex: 1; /* Allow buttons to grow and fill the container */
   text-wrap: nowrap;
-  width: 200px;
   min-width: min-content;
   height: min-content;
   margin: 20px 10px;
