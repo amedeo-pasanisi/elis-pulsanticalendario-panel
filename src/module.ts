@@ -7,10 +7,13 @@ export const plugin = new PanelPlugin<PulsantiCalendarioOptions>(PulsantiCalenda
     .addTextInput({
       path: 'periodoInizio',
       name: 'Data di inizio periodo',
+      description: 'Date format YY-MM-DD'
     })
     .addTextInput({
       path: 'periodoFine',
       name: 'Data di fine periodo',
+      description: 'Date format YY-MM-DD',
+      defaultValue: new Date().toISOString().split('T')[0]
     })
     .addTextInput({
       path: 'variable_data_inizio',
