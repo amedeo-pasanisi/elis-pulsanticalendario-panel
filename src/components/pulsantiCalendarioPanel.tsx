@@ -39,8 +39,8 @@ export const PulsantiCalendarioPanel: React.FC<PulsantiCalendarioPanelProps> = (
         setClickedButton('month')
         break
       case 'Ultimo Anno':
-        let currentYear = currentDate.getFullYear()
-        dataInizio = new Date(currentYear, 0, 1).toISOString().split('T')[0]
+        const currentYear = currentDate.getFullYear()
+        dataInizio = new Date(currentYear, 0, 2).toISOString().split('T')[0]
         setClickedButton('year')
         break
       case 'Tutto il periodo':
@@ -54,6 +54,7 @@ export const PulsantiCalendarioPanel: React.FC<PulsantiCalendarioPanelProps> = (
           dataInizio = undefined
           dataFine = undefined
         }
+        setClickedButton('')
         break
     }
     console.log(dataInizio, dataFine)
