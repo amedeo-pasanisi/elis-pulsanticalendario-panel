@@ -10,7 +10,7 @@ interface PulsantiCalendarioPanelProps extends PanelProps<PulsantiCalendarioOpti
 export const PulsantiCalendarioPanel: React.FC<PulsantiCalendarioPanelProps> = ({ options, data, width, height, fieldConfig, id }) => {
   const [clickedButton, setClickedButton] = useState<string>('')
 
-  function parseUserInput(userInput: string): string | undefined {
+  const parseUserInput = (userInput: string): string | undefined => {
     if (userInput) {
       const date = new Date(userInput)
       if (isNaN(date.getTime())) {
@@ -76,21 +76,20 @@ export const PulsantiCalendarioPanel: React.FC<PulsantiCalendarioPanelProps> = (
         justify-content: center;
         align-items: center;
         align-content: center;
-        flex-wrap: wrap;
       `
     )}>
-      <button className={`calendarioButton ${clickedButton === 'week' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
+      {options.selectedButtons?.includes('settimana') && <button className={`calendarioButton ${clickedButton === 'week' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
         Ultima Settimana
-      </button>
-      <button className={`calendarioButton ${clickedButton === 'month' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
+      </button>}
+      {options.selectedButtons?.includes('mese') && <button className={`calendarioButton ${clickedButton === 'month' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
         Ultimo Mese
-      </button>
-      <button className={`calendarioButton ${clickedButton === 'year' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
+      </button>}
+      {options.selectedButtons?.includes('anno') && <button className={`calendarioButton ${clickedButton === 'year' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
         Ultimo Anno
-      </button>
-      <button className={`calendarioButton ${clickedButton === 'period' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
+      </button>}
+      {options.selectedButtons?.includes('periodo') && <button className={`calendarioButton ${clickedButton === 'period' && 'clicked'}`} onClick={e => handleButtonClick(e)}>
         Tutto il periodo
-      </button>
+      </button>}
     </div>
   )
 }

@@ -3,4 +3,5 @@ export interface PulsantiCalendarioOptions {
   periodoFine: string, 
   variable_data_inizio: string,
   variable_data_fine: string,
+  selectedButtons: string[]
 }
